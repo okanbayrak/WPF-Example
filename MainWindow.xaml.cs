@@ -1,4 +1,4 @@
-﻿using IsarEntities;
+﻿using Entities;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -15,7 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace IsarAerospace
+namespace WPFExample
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

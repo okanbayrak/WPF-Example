@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IsarAerospace.Properties
+namespace WPFExample.Properties
 {
 
 

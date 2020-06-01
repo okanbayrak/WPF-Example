@@ -95,9 +95,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\IsarEntities\IsarEntities.csproj">
-      <Project>{12c5c01e-d372-435a-aa6a-1c97cf1bd9c3}</Project>
-      <Name>IsarEntities</Name>
+    <ProjectReference Include="..\Entities\Entities.csproj">
+      <Project>{12C5C01E-D372-435A-AA6A-1C97CF1BD9C3}</Project>
+      <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
