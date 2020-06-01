@@ -1,0 +1,46 @@
+﻿<Window x:Class="IsarAerospace.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IsarAerospace"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="745*"/>
+            <ColumnDefinition Width="47*"/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="Books" HorizontalAlignment="Left" Height="345" Margin="10,64,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="2" AutoGenerateColumns="False" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                <DataGridTextColumn Header="Author" Binding="{Binding Author}"/>
+                <DataGridTextColumn Header="Price" Binding="{Binding Price}">
+                    <DataGridTextColumn.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{Binding Path=PriceColor}"/>
+                        </Style>
+                    </DataGridTextColumn.CellStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Year" Binding="{Binding Year}"/>
+                <DataGridComboBoxColumn x:Name="BookBinding" Header="Binding" SelectedItemBinding="{Binding Binding}"/>
+                <DataGridCheckBoxColumn Header="In Stock" Binding="{Binding InStock}" IsReadOnly="True"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="Show_Description_Click">Description</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Background" Value="{Binding Path=RowColor}"/>
+                </Style>
+            </DataGrid.RowStyle>
+        </DataGrid>
+        <Button x:Name="Browse" Content="Browse" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" Width="100" Cursor="Hand" Click="Browse_Click"/>
+        <Button x:Name="InStock" Content="Only In Stock" HorizontalAlignment="Left" Margin="157,22,0,0" VerticalAlignment="Top" Width="100" Click="Show_InStock_Click"/>
+
+    </Grid>
+</Window>
